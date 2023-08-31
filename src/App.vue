@@ -14,6 +14,32 @@
           </draggle>
         </div>
       </div>
+
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="table-responsive">
+            <table class="table table-vcenter card-table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Task</th>
+                  <th>Deadline</th>
+                  <th class="w-1"></th>
+                </tr>
+              </thead>
+
+              <draggle v-model="todos" transition="100" tag="tbody" tag-child="tr">
+                <template v-slot:item="{ item, i }">
+                    <td> {{ i + 1 }} </td>
+                    <td> {{ item.title }} </td>
+                    <td> 31/12/2023 12.33 </td>
+                    <td> <i class="ti ti-settings"></i> </td>
+                </template>
+              </draggle>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -1,9 +1,9 @@
 <template>
-  <div draggable="true" @transitionStart="transitionStart" @transitionEnd="transitionEnd"
+  <component :is="tagChild" :draggable="draggable" @transitionStart="transitionStart" @transitionEnd="transitionEnd"
     @dragover.prevent.stop="onDragOver" @dragstart.stop="onDragStart" @dragend.stop="onDragEnd" @dragenter.prevent
     ref="draggableItemEl" :class="{ isDragging }">
     <slot></slot>
-  </div>
+  </component>
 </template>
 
 <script lang="ts">
@@ -13,11 +13,20 @@ import { useDraggleItem } from "../composables/draggle";
 export default {
   name: "DraggleItem",
   props: {
+    tagChild: {
+      default: "div",
+      type: String
+    },
     item: Object,
     items: Array<any>,
     position: Number,
-    containerId: Number
+    containerId: Number,
+    draggable: {
+      default: true,
+      type: Boolean
+    }
   },
+
   setup(props, context) {
     const { item, items, position, containerId } = toRefs<any>(props);
     const {
