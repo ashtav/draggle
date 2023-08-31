@@ -30,11 +30,11 @@ npm run serve
 import component:
 
 ```javascript
-import Draggable from "draggle";
+import Draggle from "draggle";
 
 export default {
   components: {
-    Draggable,
+    Draggle,
   },
 
   data(){
@@ -48,11 +48,11 @@ export default {
 template:
 
 ```vue
-<draggable v-model="todos" transition="100" tag="div" parent-class="list-group list-group-flush" child-class="list-group-item list-group-item-action cursor-pointer">
+<draggle v-model="todos" transition="100" tag="div" parent-class="list-group list-group-flush" child-class="list-group-item list-group-item-action cursor-pointer">
    <template v-slot:item="{ item }">
       {{ item.title }}
    </template>
-</draggable>
+</draggle>
 ```
 
 This componet is implemented based on [v-slot](https://v3.vuejs.org/guide/component-slots.html#slots)
