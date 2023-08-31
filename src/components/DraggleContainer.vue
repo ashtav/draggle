@@ -3,7 +3,7 @@
     <transition-group name="draggle-item-list" :tag="tag" :class="parentClass">
       <draggle-item v-for="(item, index) in items" :key="item.id" :item="item" :items="items" :containerId="id" :position="index"
         :class="childClass" @itemDragOver="onItemDragOver" @dragenter.prevent @change="onItemChange">
-        <slot name="item" :item="item.data"></slot>
+        <slot name="item" :item="item.data" :i="index"></slot>
       </draggle-item>
     </transition-group>
   </div>

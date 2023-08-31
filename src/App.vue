@@ -8,8 +8,8 @@
           </div>
           <draggle v-model="todos" transition="100" parent-class="list-group list-group-flush" @change="onChange"
             child-class="list-group-item list-group-item-action cursor-pointer">
-            <template v-slot:item="{ item }">
-              {{ item.title }}
+            <template v-slot:item="{ item, i }">
+              {{ item.title }} {{ i }}
             </template>
           </draggle>
         </div>
